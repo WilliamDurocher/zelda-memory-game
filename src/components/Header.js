@@ -1,8 +1,9 @@
 import React from "react";
 
 
-const Header = () => {
+const Header = (props) => {
 
+    const { currentScore, highScore } = props;
 
     return (
         <div className="header">
@@ -12,8 +13,8 @@ const Header = () => {
                 <div className="title">Get points by clicking on an image but don't click on any more than once!</div>
             </div>
             <div className="header-scoreboard">
-                <div className="your-score">Your Score: 0</div>
-                <div className="best-score">High Score: 15</div>
+                <div className="your-score">Your Score: {currentScore}</div>
+                <div className="best-score">High Score: {highScore}</div>
             </div>
         </div>
     );

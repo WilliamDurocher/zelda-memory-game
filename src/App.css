@@ -1,8 +1,8 @@
-html{
+html {
   background-color: black;
 }
 
-.header{
+.header {
   display: flex;
   min-width: 100%;
   border: 1px solid white;
@@ -11,21 +11,21 @@ html{
   justify-content: space-between;
 }
 
-.header-logo{
-width: 250px;
-border: 1px solid white;
-}
-
-.header-title{
-
-}
-
-.header-scoreboard{
+.header-logo {
   width: 250px;
   border: 1px solid white;
 }
 
-.gameboard{
+.header-title {
+  font-weight: 700;
+}
+
+.header-scoreboard {
+  width: 250px;
+  border: 1px solid white;
+}
+
+.gameboard {
   color: white;
   margin: 20px;
   display: flex;
@@ -34,20 +34,20 @@ border: 1px solid white;
   justify-content: center;
 }
 
-.card-container{
-  height:250px;
+.card-container {
+  height: 250px;
   border: 1px solid white;
   width: 200px;
 }
 
-.card-img{
-height: 80%;
+.card-img {
+  height: 80%;
 }
 
-.card-name{
-border: 1px solid white;
-height: 20%;
+.card-name {
+  border: 1px solid white;
+  height: 20%;
 
-text-align: center;
-line-height: 40px;
+  text-align: center;
+  line-height: 40px;
 }
