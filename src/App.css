@@ -1,5 +1,6 @@
-html {
-  background-color: black;
+body {
+  background: rgb(3,3,3);
+background: linear-gradient(180deg, rgba(3,3,3,1) 0%, rgba(10,10,10,1) 60%, rgba(108,108,108,1) 100%);
 }
 
 .header {
@@ -26,7 +27,7 @@ html {
 }
 
 .gameboard {
-  color: white;
+  color: black;
   margin: 20px;
   display: flex;
   gap: 30px;
@@ -36,18 +37,23 @@ html {
 
 .card-container {
   height: 250px;
-  border: 1px solid white;
   width: 200px;
+  border-radius: 15px;
+  background-color: white;
+
 }
 
 .card-img {
   height: 80%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
 }
 
 .card-name {
-  border: 1px solid white;
+  border-top: 3px solid black;
   height: 20%;
-
   text-align: center;
   line-height: 40px;
 }

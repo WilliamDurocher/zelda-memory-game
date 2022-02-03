@@ -5,12 +5,12 @@ const Card = (props) => {
     //get card const based on props
     //onclick that calls game logic
 
-    const { card, gameLogic } = props;
+    const { card, gameLogic, highestScore } = props;
 
 
     return (
-        <div className="card-container" onClick={() => gameLogic(card.id)}>
-        <div className="card-img">{card.id}</div>
+        <div className="card-container" onClick={() => gameLogic(card.id, highestScore)}>
+        <img className="card-img" src={card.image} alt={card.title}></img>
         <div className="card-name">{card.title}</div>
         </div>
     );
