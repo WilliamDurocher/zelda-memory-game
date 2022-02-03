@@ -3,6 +3,7 @@ import React, { useState } from "react";
 
 import Header from "./Header";
 import Gameboard from "./Gameboard";
+import EndModal from "./EndModal";
 import { level1, level2 } from "../Constants";
 
 
@@ -13,6 +14,7 @@ const Game = () => {
     const [clickedCards, setClickedCards] = useState([]);
 
     const [currentLevel, setCurrentLevel] = useState(level1);
+    const [showModal, setShowModal] = useState(false);
 
     const levelsArray = [level1, level2];
 
@@ -22,6 +24,10 @@ const Game = () => {
 
     const handleHighScore = () => {
         sethighScore(currentScore);
+    }
+
+    const handleShowModal = () => {
+        setShowModal(showModal => !showModal);
     }
 
     const resetGame = () => {
@@ -35,9 +41,15 @@ const Game = () => {
 
     const handleCurrentLevel = () => {
         let index = levelsArray.indexOf(currentLevel);
-        if (index >= 0 && index < levelsArray.length - 1)
+        if (index >= 0 && index < levelsArray.length - 1) {
             setCurrentLevel(levelsArray[index + 1]);
+        }
+    }
 
+    const changeLevel = () => {
+        handleCurrentLevel();
+        resetGame();
+        handleShowModal();
     }
 
     const gameLogic = (cardClicked, highestScore) => {
@@ -53,7 +65,8 @@ const Game = () => {
 
                 //Winner, next level etc
                 resetGame();
-                handleCurrentLevel();
+                handleShowModal();
+
             }
 
         } else {
@@ -68,10 +81,13 @@ const Game = () => {
 
 
     return (
-        <div>
+        <>
             <Header currentScore={currentScore} highScore={highScore} />
             <Gameboard key={currentLevel.highestScore} gameLogic={gameLogic} currentScore={currentScore} highScore={highScore} level={currentLevel} />
-        </div>
+            <EndModal show={showModal} nextLevel={changeLevel}>
+                <p>Modal</p>
+            </EndModal>
+        </>
     );
 }
 
