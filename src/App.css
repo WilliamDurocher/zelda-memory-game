@@ -68,6 +68,12 @@ background: linear-gradient(180deg, rgba(3,3,3,1) 0%, rgba(10,10,10,1) 60%, rgba
   width:100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  overflow: auto;
+  transition: all 0.5s linear;
+  -webkit-transition: all 0.5s linear;
+  
 }
 
 .modal-main {
@@ -78,6 +84,46 @@ background: linear-gradient(180deg, rgba(3,3,3,1) 0%, rgba(10,10,10,1) 60%, rgba
   top:50%;
   left:50%;
   transform: translate(-50%,-50%);
+  background-color: white;
+  margin: auto;
+  padding: 30px;
+  border-radius: 30px;
+  max-width: 450px;
+  height: 200px;
+}
+
+.modal-container{
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.modal-info{
+  font-size: 24px;
+  text-align: center;
+
+}
+
+.btn{
+  width: 150px;
+  height: 50px;
+  border-radius: 15px;
+  background-color: black;
+  font-size: 21px;
+  border-style: solid;
+  color: white;
+}
+
+.btn:hover{
+  cursor: pointer;
+}
+
+
+.btn-container{
+  display: flex;
+  gap: 10px;
+  align-self: center;
 }
 
 .display-block {

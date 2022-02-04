@@ -15,13 +15,14 @@ const Game = () => {
 
     const [currentLevel, setCurrentLevel] = useState(level1);
     const [showModal, setShowModal] = useState(false);
+    const [endGameStatus, setEndGameStatus] = useState("");
 
     const levelsArray = [level1, level2];
+
 
     const handleCurrentScore = () => {
         setCurrentScore(currentScore + 1);
     }
-
     const handleHighScore = () => {
         sethighScore(currentScore);
     }
@@ -39,6 +40,10 @@ const Game = () => {
         setClickedCards(clickedCards => [...clickedCards, newCard]);
     }
 
+    const handleEndGameStatus = (newStatus) => {
+        setEndGameStatus(newStatus)
+    }
+
     const handleCurrentLevel = () => {
         let index = levelsArray.indexOf(currentLevel);
         if (index >= 0 && index < levelsArray.length - 1) {
@@ -52,6 +57,18 @@ const Game = () => {
         handleShowModal();
     }
 
+    const restartLevel = () => {
+        resetGame();
+        handleShowModal();
+    }
+
+    const restartGame = () => {
+        setCurrentLevel(levelsArray[0]);
+        resetGame();
+        handleShowModal();
+
+    }
+
     const gameLogic = (cardClicked, highestScore) => {
 
 
@@ -61,32 +78,27 @@ const Game = () => {
 
 
             if (clickedCards.length + 1 === highestScore) {
-                console.log("winner")
-
-                //Winner, next level etc
-                resetGame();
+                if (currentLevel.level === levelsArray.at(-1).level){
+                    handleEndGameStatus("end");
+                }else{
+                    handleEndGameStatus("winner");
+                }
                 handleShowModal();
-
             }
 
         } else {
+
             handleHighScore();
-            resetGame();
+            handleEndGameStatus("loser");
+            handleShowModal();
         }
-
-
     }
-
-
-
 
     return (
         <>
             <Header currentScore={currentScore} highScore={highScore} />
             <Gameboard key={currentLevel.highestScore} gameLogic={gameLogic} currentScore={currentScore} highScore={highScore} level={currentLevel} />
-            <EndModal show={showModal} nextLevel={changeLevel}>
-                <p>Modal</p>
-            </EndModal>
+            <EndModal gameStatus={endGameStatus} show={showModal} nextLevel={changeLevel} restartLevel={restartLevel} restartGame={restartGame} />
         </>
     );
 }

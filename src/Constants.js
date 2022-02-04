@@ -10,6 +10,7 @@ import impa from "./images/impa.jpg";
 
 
 const level1 = {
+    "level": 1,
     "highestScore": 1,
     "cards": [
         {
@@ -22,6 +23,7 @@ const level1 = {
 
 
 const level2 = {
+    "level": 2,
     "highestScore": 8,
     "cards": [
         {
