@@ -2,11 +2,12 @@ import React, { useState } from "react";
 
 
 import Header from "./Header";
+import uniqid from "uniqid";
 import Gameboard from "./Gameboard";
 import EndModal from "./EndModal";
 import { level1, level2 } from "../Constants";
 
-
+//TODO finish levels, add style to header, add level picker
 const Game = () => {
 
     const [currentScore, setCurrentScore] = useState(0);
@@ -51,6 +52,11 @@ const Game = () => {
         }
     }
 
+    const levelSelector = (levelIndex) => {
+        setCurrentLevel(levelsArray[levelIndex]);
+        resetGame();
+    }
+
     const changeLevel = () => {
         handleCurrentLevel();
         resetGame();
@@ -76,8 +82,9 @@ const Game = () => {
             addCard(cardClicked);
             handleCurrentScore();
 
-
             if (clickedCards.length + 1 === highestScore) {
+
+                //here it is better to use levelsArray[levelsArray.length - 1] because of compatibility
                 if (currentLevel.level === levelsArray.at(-1).level){
                     handleEndGameStatus("end");
                 }else{
@@ -96,8 +103,8 @@ const Game = () => {
 
     return (
         <>
-            <Header currentScore={currentScore} highScore={highScore} />
-            <Gameboard key={currentLevel.highestScore} gameLogic={gameLogic} currentScore={currentScore} highScore={highScore} level={currentLevel} />
+            <Header key={uniqid()} currentScore={currentScore} highScore={highScore} level={currentLevel.level} levelName={currentLevel.name} levelsArray={levelsArray} levelSelector={levelSelector} />
+            <Gameboard key={currentLevel.level} gameLogic={gameLogic} currentScore={currentScore} highScore={highScore} level={currentLevel} />
             <EndModal gameStatus={endGameStatus} show={showModal} nextLevel={changeLevel} restartLevel={restartLevel} restartGame={restartGame} />
         </>
     );
