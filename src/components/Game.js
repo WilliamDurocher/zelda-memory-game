@@ -3,7 +3,7 @@ import uniqid from "uniqid";
 import Header from "./Header";
 import Gameboard from "./Gameboard";
 import EndModal from "./EndModal";
-import { level1, level2, level3 } from "../Constants";
+import { level1, level2, level3, level4, level5 } from "../Constants";
 
 const Game = () => {
 
@@ -14,7 +14,7 @@ const Game = () => {
     const [showModal, setShowModal] = useState(false);
     const [endGameStatus, setEndGameStatus] = useState("");
 
-    const levelsArray = [level1, level2, level3];
+    const levelsArray = [level1, level2, level3, level4, level5];
 
     const handleCurrentScore = () => {
         setCurrentScore(currentScore + 1);

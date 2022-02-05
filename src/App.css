@@ -80,7 +80,7 @@ font-family: 'hyliaSerif';
 }
 
 .level{
-  font-size: 20px;
+  font-size: 19px;
 }
 
 .level-select{
@@ -109,6 +109,8 @@ font-family: 'hyliaSerif';
   width: 200px;
   border-radius: 15px;
   background-color: white;
+  flex: 1 0 9%;
+
 
 }
 
@@ -129,6 +131,7 @@ font-family: 'hyliaSerif';
   height: 20%;
   text-align: center;
   line-height: 40px;
+  font-size: 19px;
 }
 
 
