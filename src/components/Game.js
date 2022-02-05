@@ -23,6 +23,10 @@ const Game = () => {
         sethighScore(currentScore);
     }
 
+    const resetHighScore = () => {
+        sethighScore(0);
+    }
+
     const handleShowModal = () => {
         setShowModal(showModal => !showModal);
     }
@@ -57,6 +61,7 @@ const Game = () => {
         handleCurrentLevel();
         resetGame();
         handleShowModal();
+        resetHighScore();
     }
 
     const restartLevel = () => {
