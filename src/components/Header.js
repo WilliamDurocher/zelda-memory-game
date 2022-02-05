@@ -15,8 +15,9 @@ const Header = (props) => {
 
 
     const handleLevelSelect = (level) => {
-        handleShowModal();
         levelSelector(levelsArray.indexOf(level));
+        handleShowModal();
+
     }
 
     return (
@@ -34,7 +35,7 @@ const Header = (props) => {
                 <div className="header-info score">Your Score: {currentScore}</div>
                 <div className="header-info score">High Score: {highScore}</div>
             </div>
-            <LevelSelectModal show={showModal} levelsArray={levelsArray} handleLevelSelect={handleLevelSelect}/>
+            <LevelSelectModal show={showModal} levelsArray={levelsArray} handleLevelSelect={handleLevelSelect} handleShowModal={handleShowModal}/>
         </div>
     );
 }

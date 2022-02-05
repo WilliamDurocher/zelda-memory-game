@@ -11,13 +11,11 @@ const EndModal = ({ nextLevel, restartLevel, show, gameStatus, restartGame }) =>
   if (gameStatus === "winner") {
     modalTitle = "You completed this level! Good job!";
   } else if (gameStatus === "loser") {
-    modalTitle = "You are a complete loser";
+    modalTitle = "Game Over";
   } else {
     modalTitle = "You finished the game! Amazing!";
 
   }
-
-
 
   return (
     <div className={showHideClassName}>

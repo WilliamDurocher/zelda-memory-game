@@ -86,11 +86,12 @@ font-family: 'hyliaSerif';
 .level-select{
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  
 }
 
 .selector{
-  display: flex;
-  gap: 10px;
+  text-align: center;
 }
 
 
@@ -148,6 +149,8 @@ font-family: 'hyliaSerif';
   
 }
 
+
+
 .modal-main {
   position:fixed;
   background: white;
@@ -161,7 +164,6 @@ font-family: 'hyliaSerif';
   padding: 30px;
   border-radius: 30px;
   max-width: 450px;
-  height: 200px;
 }
 
 .modal-container{
@@ -169,16 +171,16 @@ font-family: 'hyliaSerif';
   height: 100%;
   flex-direction: column;
   justify-content: space-between;
+  gap: 10px;
 }
 
 .modal-info{
-  font-size: 24px;
+  font-size: 32px;
   text-align: center;
 
 }
 
 .btn{
-  width: 150px;
   height: 50px;
   border-radius: 15px;
   background-color: black;

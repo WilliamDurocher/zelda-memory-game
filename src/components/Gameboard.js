@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Card from './Card';
 
-
-
 const Gameboard = (props) => { 
     const { gameLogic, currentScore, highScore, level } = props;
   

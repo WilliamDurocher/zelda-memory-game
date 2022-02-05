@@ -5,7 +5,13 @@ import emptybottle from "./images/level1/emptybottle.png";
 import ocarina from "./images/level1/ocarina.jpg";
 import sheikahslate from "./images/level1/sheikahslate.png";
 
-
+import dekulink from "./images/level2/dekulink.jpg";
+import fiercedeity from "./images/level2/fiercedeity.jpg";
+import goronlink from "./images/level2/goronlink.jpg";
+import link2 from "./images/level2/link2.jpg";
+import skullkid from "./images/level2/skullkid.jpg";
+import tingle from "./images/level2/tingle.jpg";
+import zoralink from "./images/level2/zoralink.jpg";
 
 
 
@@ -49,9 +55,53 @@ const level1 = {
     ]
 };
 
-
 const level2 = {
     "level": 2,
+    "name": "Majora's Mask",
+    "highestScore": 7,
+    "cards": [
+        {
+            "id": uniqid(),
+            "title": "Deku Link",
+            "image": dekulink
+        },
+        {
+            "id": uniqid(),
+            "title": "Fierce Deity Link",
+            "image": fiercedeity
+        },
+        {
+            "id": uniqid(),
+            "title": "Tingle",
+            "image": tingle
+        },
+        {
+            "id": uniqid(),
+            "title": "Goron Link",
+            "image": goronlink
+        },
+        {
+            "id": uniqid(),
+            "title": "Skull Kid",
+            "image": skullkid
+        },
+        {
+            "id": uniqid(),
+            "title": "Zora Link",
+            "image": zoralink
+        },
+        {
+            "id": uniqid(),
+            "title": "Link",
+            "image": link2
+        }
+    ]
+    };
+
+
+const level3 = {
+    "level": 3,
+    "name": "Ocarina of Time",
     "highestScore": 11,
     "cards": [
         {
@@ -112,4 +162,7 @@ const level2 = {
     ]
 };
 
-export { level1, level2 } 
+
+
+
+export { level1, level2, level3 } 
